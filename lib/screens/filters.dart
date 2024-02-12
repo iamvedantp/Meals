@@ -9,6 +9,7 @@ enum Filter {
   vegan,
 }
 
+
 class FiltersScreen extends StatefulWidget {
   const FiltersScreen({super.key, required this.currentFilters});
 
