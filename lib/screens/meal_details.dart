@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:meals/models/meal.dart';
 import 'package:meals/providers/favorites_provider.dart';
 
@@ -44,7 +43,10 @@ class MealDetailsScreen extends ConsumerWidget {
                     child: child,
                   );
                 },
-                child: Icon(isFavorite ? Icons.star : Icons.star_border, key: ValueKey(isFavorite),),
+                child: Icon(
+                  isFavorite ? Icons.star : Icons.star_border,
+                  key: ValueKey(isFavorite),
+                ),
               ),
             )
           ],
@@ -53,7 +55,7 @@ class MealDetailsScreen extends ConsumerWidget {
           child: Column(
             children: [
               Hero(
-                tag:  meal.id,
+                tag: meal.id,
                 child: Image.network(
                   meal.imageUrl,
                   height: 300,
@@ -75,7 +77,7 @@ class MealDetailsScreen extends ConsumerWidget {
                 Text(
                   ingredient,
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: Theme.of(context).colorScheme.onBackground,
+                        color: Theme.of(context).colorScheme.onSurface,
                       ),
                 ),
               const SizedBox(height: 24),
@@ -94,7 +96,7 @@ class MealDetailsScreen extends ConsumerWidget {
                     step,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          color: Theme.of(context).colorScheme.onBackground,
+                          color: Theme.of(context).colorScheme.onSurface,
                         ),
                   ),
                 ),

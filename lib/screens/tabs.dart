@@ -8,11 +8,11 @@ import 'package:meals/providers/favorites_provider.dart';
 import 'package:meals/providers/filters_provider.dart';
 
 const kInitialFilters = {
- Filter.glutenfree: false,
- Filter.lactosefree: false,
- Filter.vegetarian: false,
- Filter.vegan: false,
-  };
+  Filter.glutenfree: false,
+  Filter.lactosefree: false,
+  Filter.vegetarian: false,
+  Filter.vegan: false,
+};
 
 class TabsScreen extends ConsumerStatefulWidget {
   const TabsScreen({super.key});
@@ -25,9 +25,7 @@ class TabsScreen extends ConsumerStatefulWidget {
 
 class _TabsScreenState extends ConsumerState<TabsScreen> {
   int _selectedPageIndex = 0;
-  
 
-  
   void _selectPage(int index) {
     setState(() {
       _selectedPageIndex = index;
@@ -37,22 +35,20 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
   void _setScreen(String identifier) async {
     Navigator.of(context).pop();
     if (identifier == 'filters') {
-await Navigator.of(context).push<Map<Filter,bool>>(
+      await Navigator.of(context).push<Map<Filter, bool>>(
         MaterialPageRoute(
           builder: (ctx) => const FiltersScreen(),
         ),
       );
-    } 
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-  
-  final avaliableMeals = ref.watch(filteredMealsIsProvider);
-
+    final availableMeals = ref.watch(filteredMealsIsProvider);
 
     Widget activePage = CategoriesScreen(
-      avaliableMeals: avaliableMeals,
+      availableMeals: availableMeals,
     );
     var activePageTitle = 'Categories';
 
@@ -60,7 +56,6 @@ await Navigator.of(context).push<Map<Filter,bool>>(
       final favoriteMeals = ref.watch(favoriteMealsProvider);
       activePage = MealsScreen(
         meals: favoriteMeals,
-        
       );
       activePageTitle = 'Your Favorites';
     }
