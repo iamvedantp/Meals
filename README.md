@@ -2,6 +2,9 @@
 
 Meals is a Flutter application that showcases a meal planning and recipe exploration experience. It lets users browse meal categories, view detailed recipes, apply dietary filters, and mark meals as favorites using Riverpod for state management.
 
+![meals](https://github.com/user-attachments/assets/a1894868-35c6-4be3-8118-810ccc28b3f6)
+
+
 ## Features
 
 - **Meal Categories:** Browse a variety of meal categories such as Italian, Quick & Easy, Hamburgers, German, Light & Lovely, Exotic, Breakfast, Asian, French, and Summer.
