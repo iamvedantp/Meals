@@ -1,8 +1,29 @@
 import 'package:flutter/material.dart';
 
+/// A widget that displays the main navigation drawer.
+///
+/// ## Usage Example:
+///
+/// ```dart
+/// Scaffold(
+///   appBar: AppBar(title: const Text('My App')),
+///   drawer: MainDrawer(
+///     onSelectScreen: (identifier) {
+///       // Handle navigation based on the identifier.
+///       if (identifier == 'meals') {
+///         // Navigate to the Meals (Categories) tab.
+///       } else if (identifier == 'filters') {
+///         // Navigate to the Filters screen.
+///       }
+///     },
+///   ),
+///   body: const MyHomePage(),
+/// );
+/// ```
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key, required this.onSelectScreen});
 
+  /// Callback to notify parent of the selected screen.
   final void Function(String identifier) onSelectScreen;
 
   @override
@@ -10,6 +31,7 @@ class MainDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
+          // Drawer header with a gradient background.
           DrawerHeader(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
@@ -42,6 +64,7 @@ class MainDrawer extends StatelessWidget {
               ],
             ),
           ),
+          // Meals tile: triggers navigation to the main (Categories) tab.
           ListTile(
             leading: Icon(
               Icons.restaurant,
@@ -59,6 +82,7 @@ class MainDrawer extends StatelessWidget {
               onSelectScreen('meals');
             },
           ),
+          // Filters tile: triggers navigation to the Filters screen.
           ListTile(
             leading: Icon(
               Icons.settings,
