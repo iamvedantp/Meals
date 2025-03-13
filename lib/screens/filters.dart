@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:meals/providers/filteredMealsProvider.dart';
+import 'package:meals/providers/filteredmealsprovider.dart';
 
 /// A reusable widget for displaying a filter switch.
 class FilterSwitchTile extends StatelessWidget {
